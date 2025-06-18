@@ -1,5 +1,22 @@
 // This script handles the CSV file upload and displays its content in a table format.
-
+const site = [
+  "sampleID", "Site", "Treatment", "Lat", "Long", "Texture",
+  "Irrigation", "SampleDepth", "Elevation", "SoilSeries", "Suborder",
+  "Region", "Crop", "Slope", "GrowingDays", "MAP"
+]
+const tech = [
+  "Season", "Mineral", "PMethod", "Weathering", "ECMethod"
+]
+const factor = [
+  "OMClass", "TextureClass", "ClimateClass", "Fe2o3Class", 
+  "SeasonCode",
+]
+const measure = [
+  "Clay", "Sand", "WSA", "Bd", "pH", "EC", "SOC", "MBC", "PMN", "BG"
+]
+const crop = [
+  "Crop", "CropCode", "Tsat", "T1", "dT", "m", "max"
+]
 document.getElementById('file').addEventListener('change', function(e) {// Handle file selection
   const file = e.target.files[0]; // Get the first file from the input
   if (!file) return; // If no file is selected, exit the function
@@ -9,7 +26,11 @@ document.getElementById('file').addEventListener('change', function(e) {// Handl
     skipEmptyLines: true, // Skip empty lines in the CSV
     complete: function(results) { // Callback function when parsing is complete
       const data = results.data; // Get the parsed data
-      const table = document.getElementById('table'); // Get the table element by ID
+      const siteInfo = document.getElementById('siteInfo');// Get the table element by ID
+      const techDetail = document.getElementById('techDetail');
+      const factClass = document.getElementById('factClass');
+      const measuredVal = document.getElementById('measuredVal');
+      const cropVal = document.getElementById('cropVal'); 
       table.innerHTML = ''; // Clear any existing content in the table
 
       // Create header

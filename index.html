@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSV Parser</title>
+  <title>SMAF</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <input type="file" id="file" />
-  <table id="table"></table>
+    <!-- Load PapaParse from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
-  <!-- Load PapaParse from CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
-  <!-- Load your JS file after PapaParse is loaded -->
-  <script src="js/main.js"></script>
+    <!-- Load your JS file after PapaParse is loaded -->
+    <script src="js/main.js"></script>
+    
+    <h1>Soil Management Assessment Framework (SMAF)</h1>
+    
+    <input type="file" id="file" />
+    <h3>Site Information</h3>
+    <table id="siteInfo"></table>
+    <h3>Technical Deatails</h3>
+    <table id="techDetail"></table>
+    <h3>Factor Classes</h3>
+    <table id="factClass"></table>
+    <h3>Measured Values</h3>
+    <table id="measuredVal"></table>
+    <h3>Crop Value Lookup</h3>
+    <table id="cropVal"></table>
 </body>
 </html>
